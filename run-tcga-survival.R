@@ -52,13 +52,15 @@ samples_and_drugs <- get_samples_and_drugs(
 	data_to_process
 	)
 
-# get overall survival for each sample
+# get survival estimates for each sample
 # and study
 overall_survival <- get_overall_survival(
 	data_to_process
 	)
 
-
+progression_free_survival <- get_progression_free_survival(
+	data_to_process
+	)
 
 
 
