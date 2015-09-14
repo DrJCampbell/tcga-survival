@@ -1,0 +1,5 @@
+#
+# input files for tcga projects
+#
+study_id	drugs	followup	nte	outpath
+
