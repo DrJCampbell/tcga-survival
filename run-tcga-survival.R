@@ -20,7 +20,7 @@ data_to_process <- read.table(
 
 # find all drug names used and report
 observed_drugs <- get_observed_drugs(
-	data_to_process[,2] # drugs_file_name
+	data_to_process # drugs_file_name
 	)
 
 
@@ -47,8 +47,15 @@ write.table(
 # all treatments. Then dynamically group
 # cell lines with certain column names
 
+# to do
 samples_and_drugs <- get_samples_and_drugs(
-	
+	data_to_process
+	)
+
+# get overall survival for each sample
+# and study
+overall_survival <- get_overall_survival(
+	data_to_process
 	)
 
 

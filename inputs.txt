@@ -1,5 +1,6 @@
 #
 # input files for tcga projects
 #
-study_id	drugs	followup	nte	outpath
-
+study_id	drugs	followup	nte
+ov_tcga	/Users/jamesc/Dropbox/brcaness_manuscript_outline/TCGA_clinical_datasets/ov_tcga/Clinical/Biotab/nationwidechildrens.org_clinical_drug_ov.txt	/Users/jamesc/Dropbox/brcaness_manuscript_outline/TCGA_clinical_datasets/ov_tcga/Clinical/Biotab/nationwidechildrens.org_clinical_follow_up_v1.0_ov.txt	/Users/jamesc/Dropbox/brcaness_manuscript_outline/TCGA_clinical_datasets/ov_tcga/Clinical/Biotab/nationwidechildrens.org_clinical_follow_up_v1.0_nte_ov.txt
+ov_tcga_dummy	/Users/jamesc/Dropbox/brcaness_manuscript_outline/TCGA_clinical_datasets/ov_tcga/Clinical/Biotab/nationwidechildrens.org_clinical_drug_ov.txt	/Users/jamesc/Dropbox/brcaness_manuscript_outline/TCGA_clinical_datasets/ov_tcga/Clinical/Biotab/nationwidechildrens.org_clinical_follow_up_v1.0_ov.txt	/Users/jamesc/Dropbox/brcaness_manuscript_outline/TCGA_clinical_datasets/ov_tcga/Clinical/Biotab/nationwidechildrens.org_clinical_follow_up_v1.0_nte_ov.txt
