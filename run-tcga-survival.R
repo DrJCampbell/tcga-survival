@@ -2,6 +2,7 @@
 # example code to run tcga-survival-functions
 #
 
+setwd("~/Dropbox/tcga-survival")
 source("./tcga-survival-functions.R")
 
 # the inputs file needs to have the 
@@ -57,10 +58,23 @@ samples_and_drugs <- get_samples_and_drugs(
 overall_survival <- get_overall_survival(
 	data_to_process
 	)
+write.table(
+	overall_survival,
+	"overall_survival.txt",
+	col.names=TRUE,
+	row.names=FALSE,
+	sep="\t"
+	)
 
 progression_free_survival <- get_progression_free_survival(
 	data_to_process
 	)
-
+write.table(
+	progression_free_survival,
+	"progression_free_survival.txt",
+	col.names=TRUE,
+	row.names=FALSE,
+	sep="\t"
+	)
 
 

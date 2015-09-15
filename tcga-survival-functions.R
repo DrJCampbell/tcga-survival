@@ -95,13 +95,6 @@ get_overall_survival <- function(x){
 		for(patient in patients){
 			patient_data <- overall_survival[which(overall_survival$study_id == study & overall_survival$patient == patient),]
 			latest_date_for_patient_row <- which(patient_data$overall_survival == max(patient_data$overall_survival))
-			
-			if(length(latest_date_for_patient_row) > 1){
-				print(study)
-				print(patient)
-				print(latest_date_for_patient_row[1])
-			}
-			
 			latest_patient_data <- patient_data[latest_date_for_patient_row[1],]
 			overall_survival_filtered <- rbind(
 				overall_survival_filtered,
@@ -115,6 +108,7 @@ get_overall_survival <- function(x){
 
 get_progression_free_survival <- function(x){
 	progression_free_survival <- NULL
+	tumor_free_patient_data <- NULL
 	for(i in 1:nrow(x)){
 		study_id <- rownames(x)[i]
 		nte <- read.table(
@@ -124,9 +118,19 @@ get_progression_free_survival <- function(x){
 			comment.char="",
 			stringsAsFactors=FALSE
 			)
+		# also read in the followup file so we can find tumour free
+		# patients. Need to add these to the data set at the end
+		followup <- read.table(
+			file=x[i,"followup"],
+			sep="\t",
+			header=TRUE,
+			comment.char="",
+			stringsAsFactors=FALSE
+			)
 		# drop the first two rows (after the header)
 		# they are supplementary headers
 		nte <- nte[-c(1,2),]
+		followup <- followup[-c(1,2),]
 		for(j in 1:nrow(nte)){
 			patient <- nte[j,"bcr_patient_barcode"]
 			new_tumor_event_dx_days_to <- nte[j,"new_tumor_event_dx_days_to"]
@@ -141,6 +145,23 @@ get_progression_free_survival <- function(x){
 					)
 				)
 		}
+		j <- NULL
+		for(j in 1:nrow(followup)){
+			patient <- followup[j,"bcr_patient_barcode"]
+			last_contact <- followup[j,"last_contact_days_to"]
+			tumor_status <- followup[j,"tumor_status"]
+			if(tumor_status == "TUMOR FREE"){
+				tumor_free_patient_data <- rbind(
+					tumor_free_patient_data,
+					c(
+						study_id,
+						patient,
+						last_contact,
+						tumor_status
+						)
+					)
+			}
+		}
 	}
 	progression_free_survival <- data.frame(
 		study_id=as.character(progression_free_survival[,1]),
@@ -148,7 +169,66 @@ get_progression_free_survival <- function(x){
 		progression_free_survival=as.numeric(progression_free_survival[,3]),
 		outcome=as.character(progression_free_survival[,4])
 		)
-	return(progression_free_survival)
+
+	# filter the progression free survival data to find the earliest
+	# visit where a new tumour event was recorded. The add to this
+	# patients from the followup file that are tumour free - using the
+	# date of the latest visit to record the non-event
+	progression_free_survival_filtered <- NULL
+	studies <- unique(progression_free_survival$study_id)
+	for(study in studies){
+		patients <- unique(progression_free_survival[which(
+			progression_free_survival$study_id == study
+			),"patient"])
+		for(patient in patients){
+			patient_data <- progression_free_survival[which(
+				progression_free_survival$study_id == study &
+				progression_free_survival$patient == patient
+				),]
+			earliest_date_for_patient_row <- which(
+				patient_data$progression_free_survival == min(patient_data$progression_free_survival, na.rm=TRUE)
+				)
+			earliest_patient_data <- patient_data[earliest_date_for_patient_row[1],]
+			progression_free_survival_filtered <- rbind(
+				progression_free_survival_filtered,
+				earliest_patient_data
+				)
+		}
+	}
+	# now get the data for tumour free patients
+	tumor_free_patients <- setdiff(
+		tumor_free_patient_data[,2],
+		progression_free_survival[,2]
+		)
+		
+	tumor_free_patient_data <- data.frame(
+		study_id=as.character(tumor_free_patient_data[,1]),
+		patient=as.character(tumor_free_patient_data[,2]),
+		progression_free_survival=as.numeric(tumor_free_patient_data[,3]),
+		outcome=as.character(tumor_free_patient_data[,4])
+		)
+	
+	# get the latest visit date for each tumour-free
+	# patient
+	tumor_free_patient_data_filtered <- NULL
+	for(patient in unique(tumor_free_patient_data[,"patient"])){
+		patient_data <- tumor_free_patient_data[which(
+			tumor_free_patient_data[,"patient"] == patient
+			),]
+		latest_patient_visit <- which(
+			patient_data[,3] == max(patient_data[,3], na.rm=TRUE)
+			)[1]
+		tumor_free_patient_data_filtered <- rbind(
+			tumor_free_patient_data_filtered,
+			patient_data[latest_patient_visit,]
+			)
+	}
+	
+	progression_free_survival_filtered <- rbind(
+		progression_free_survival_filtered,
+		tumor_free_patient_data_filtered[(tumor_free_patient_data_filtered[,2] %in% tumor_free_patients),]
+		)
+	return(progression_free_survival_filtered)
 }
 
 
