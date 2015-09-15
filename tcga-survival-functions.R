@@ -33,6 +33,9 @@ get_overall_survival <- function(x){
 			comment.char="",
 			stringsAsFactors=FALSE
 			)
+			# drop the first two rows (after the header)
+			# they are supplementary headers
+			followup <- followup[-c(1,2),]
 		for(j in 1:nrow(followup)){
 			# last_contact_days_to
 			# death_days_to
@@ -96,6 +99,9 @@ get_progression_free_survival <- function(x){
 			comment.char="",
 			stringsAsFactors=FALSE
 			)
+		# drop the first two rows (after the header)
+		# they are supplementary headers
+		nte <- nte[-c(1,2),]
 		for(j in 1:nrow(nte)){
 			patient <- nte[j,"bcr_patient_barcode"]
 			new_tumor_event_dx_days_to <- nte[j,"new_tumor_event_dx_days_to"]
