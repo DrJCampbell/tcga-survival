@@ -72,10 +72,6 @@ get_overall_survival <- function(x){
 					outcome
 					)
 				)
-#				print(overall_survival[,1])
-#				print(overall_survival[,2])
-#				print(overall_survival[,3])
-#				print(overall_survival[,4])
 		}
 	}
 	overall_survival <- data.frame(
@@ -84,7 +80,36 @@ get_overall_survival <- function(x){
 		overall_survival=as.numeric(overall_survival[,3]),
 		outcome=as.character(overall_survival[,4])
 		)
-	return(overall_survival)
+
+	# at this stage each patient can have multiple entries.
+	# we need to get the list of patients and for each one
+	# select the largest value (i.e. not yet dead) from the
+	# set of multiple follow-up vists. This needs to be
+	# done within each study
+	overall_survival_filtered <- NULL
+	studies <- unique(overall_survival$study_id)
+	for(study in studies){
+		patients <- unique(overall_survival[which(
+			overall_survival$study_id == study
+			),"patient"])
+		for(patient in patients){
+			patient_data <- overall_survival[which(overall_survival$study_id == study & overall_survival$patient == patient),]
+			latest_date_for_patient_row <- which(patient_data$overall_survival == max(patient_data$overall_survival))
+			
+			if(length(latest_date_for_patient_row) > 1){
+				print(study)
+				print(patient)
+				print(latest_date_for_patient_row[1])
+			}
+			
+			latest_patient_data <- patient_data[latest_date_for_patient_row[1],]
+			overall_survival_filtered <- rbind(
+				overall_survival_filtered,
+				latest_patient_data
+				)
+		}
+	}
+	return(overall_survival_filtered)
 }
 
 
