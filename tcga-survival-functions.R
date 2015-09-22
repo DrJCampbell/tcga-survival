@@ -4,7 +4,8 @@
 
 get_observed_drugs <- function(x){
 	drugs <- NULL
-	for(i in nrow(x)){
+	for(i in 1:nrow(x)){
+		print(rownames(x)[i])
 		drug_data <- read.table(
 			file=x[i,"drugs"],
 			sep="\t",
@@ -12,14 +13,58 @@ get_observed_drugs <- function(x){
 			comment.char="",
 			stringsAsFactors=FALSE
 			)
-		drugs <- unique(
-			c(
-				drugs,
-				drug_data[,"pharmaceutical_therapy_drug_name"]
-				)
+		drugs <- c(
+			drugs,
+			drug_data[,"pharmaceutical_therapy_drug_name"]
 			)
 	}
-	return(drugs)
+	
+	return(unique(drugs))
+}
+
+get_samples_and_drugs <- function(x, drugs="cisplatin"){
+	drugs <- as.character(drugs)
+	projects_samples_and_drugs <- NULL
+	for(i in 1:nrow(x)){
+		study_id <- rownames(x)[i]
+		drug_data <- read.table(
+			file=x[i,"drugs"],
+			sep="\t",
+			header=TRUE,
+			comment.char="",
+			stringsAsFactors=FALSE
+			)
+			# drop the first two rows (after the header)
+			# they are supplementary headers
+			drug_data <- drug_data[-c(1,2),]
+		samples_and_drugs <- matrix(
+			data=rep(
+				0,
+				times=(
+					length(drugs) * length(unique(drug_data[,"bcr_patient_barcode"]))
+					)
+				),
+			nrow=length(unique(drug_data[,"bcr_patient_barcode"])),
+			ncol=length(drugs),
+			dimnames=list(unique(drug_data[,"bcr_patient_barcode"]),drugs)
+			)
+		
+		print(nrow(samples_and_drugs))
+		print(ncol(samples_and_drugs))
+		for(j in 1:nrow(drug_data)){
+			# pharmaceutical_therapy_drug_name
+			patient <- drug_data[j,"bcr_patient_barcode"]
+			drug <- drug_data[j,"pharmaceutical_therapy_drug_name"]
+			
+			print(paste(patient, drug))
+			
+			samples_and_drugs[patient,drug] <- 1
+		}
+		projects_samples_and_drugs <- rbind(
+			projects_samples_and_drugs,
+			samples_and_drugs
+			)
+	}
 }
 
 get_overall_survival <- function(x){
@@ -162,6 +207,9 @@ get_progression_free_survival <- function(x){
 					)
 			}
 		}
+	}
+	if(is.null(nrow(progression_free_survival))){
+		next
 	}
 	progression_free_survival <- data.frame(
 		study_id=as.character(progression_free_survival[,1]),

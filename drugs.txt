@@ -1,4 +1,523 @@
+#drug_name
+#CDE_ID:2975232
+#BCG
+#Gemzar
+Cisplatin
+#Docetaxel
+Oxaliplatin
+Carboplatin
+#Etopside
+#Taxol
+#Gemcitabine
+#Etoposide
+#Doxorubicin
+#Bacillus Calmette-Guerin (BCG)
+#Doxobubicin
+#5FU
+#[Not Available]
+#Paclitaxel
+#Ifosfamide
+#Ipilimumab
+#Nivolumab
+#Methotrexate
+#Vinblastine
+#Adriamycin
+#gemcitabine
+cisplatin
+#docetaxel
+carboplatin
+#vinblastine
+#methotrexate
+#Avastin
+#MESNA
+#Tarceva
+#doxorubicin
+#fosaprepitant
+#CDDP
+#[Unknown]
+carboplatinum
+#Cisplatnin
+#Halichondrin B
+#Mesna
+#BCG, Intravesicular
+Platinol
+#SAHA/Vorinostat
+Platinum
+platinum
+#Pacitaxol
+#Halichondrin
+#Adriamycin (doxorubicin)
+#Temsirolimus
+#Vinorelbine
+#Docetaxel +/- Zactima
+#Zoladex
+#Poly E
+#Metformin
+#Trastuzumab
+#Cyclophosphamide
+#Herceptin
+#5-Fluorouracil
+#Tamoxifen
+#Letrozol
+#Letrozole
+#Cytoxan
+#tc
+#tamoxifen
+#arimidex
+#TC
+#taxol
+#ac
+#herceptin
+#Arimidex
+#TAXOTERE
+#ADRIAMYCIN
+#Exemestane
+#NAVELBINE
+#XELODA
+#GEMZAR
+#TAXOL
+#CYTOXAN
+#Anastrozole
+#Taxotere
+#Zometa
+#LETROZOLE
+#EXEMESTANE
+#TAMOXIFEN
+#HERCEPTIN
+#E-75
+#Capecetabine
+#AE-37
+#Anastrazole
+#Abraxane
+#Zoledronic Acid
+#Fulvestrant
+#Denosumab
+#Doxorubicin Liposome
+#Lupron
+#Lapatinib
+#Xeloda
+#Femara
+#Aromasin
+#Goserelin
+#Navelbine
+#Adriamyicin
+#Fluorouracil
+#Bevacizumab
+#Epirubicoin
+#Zoledronic acid
+#Epirubicin
+#Ibandronate
+#Pamidronate
+#Chemo, NOS
+#Aloxi
+#5-FU
+#Faslodex
+#Xgeva
+#Tesetaxel
+#ANASTROZOLE (ARIMIDEX)
+#CYCLOPHOSPHAMIDE
+#PACLITAXEL
+#DOXORUBICIN
+#BEVACIZUMAB
+#CAPECITABINE
+#EXEMESTANE (AROMASIN)
+#LETROZOLE (FEMARA)
+#FULVESTRANT
+#TAMOXIFEN (NOVADEX)
+#LUPRON
+#METHOTREXATE
+#FLOUROURACIL
+#Cyclophasphamide
+#Femara (Letrozole)
+#Fulvestrant (Faslodex)
+#Xeloda (Capecitabine)
+#AROMASIN (EXEMESTANE)
+#ZOLEDRONIC ACID
+#ARIMIDEX (ANASTROZOLE)
+#DOCETAXEL
+#LEUPROLIDE ACETATE (LUPRON)
+#FLUOROURACIL
+#TRASTUZUMAB
+#ARIMIDEX
+#Arimidex (Anastrozole)
+#Letrozole (Femara)
+#Cyclophospamide
+#Aromasin (Exemestane)
+#Albumin-Bound Paclitaxel
+#paclitaxel
+#cyclophosphamide
+#Rituximab
+#Vincristine
+#Prednisone
+#Triptorelin
+#cytoxan
+#Not otherwise specified
+#Trustuzumab
+#MESNA-1
+#MESNA-2
+#VP-16
+#Doxetaxel
+#Doxil
+CARBOPLATIN
+#FEMARA
+#Cyotxan
+#BEVACIZUMAB (AVASTIN)/PLACEBO PROVIDED BY STUDY
+#Adrimycin
+#5-Flourouracil
+#5 fluorouracil
+#doxorubicine
+#doxorubicin+cyclophosphamid
+#nolvadex
+#adriamycin
+#adriamicin
+#cyclophosphamid
+#letrozolum
+#doxorubicine cyclophosphamide tamoxifen
+#anastrozolum
+#doxorubicine+cyclophosphamide+tamoxifen
+#adrimicin+cyclophosphamide
+#adriamycin+cyclophosphamide
+#paclitaxelum
+#doxorubicine+cyclophosphamide
+#tamoxiphene+leuporeline+gosereline
+#tamoxiphene+anastrozolum
+#tamoxiphene
+#cyclophosphamide+methotrexatum+fluorouracillum
+#tamoxiphen+anastrazolum
+#doxorubicin+ cyclophosphamide
+#adrimycin+cyclophosphamide
+#adriamycin+cyclophosphamid
+#adriamycin+cuclophosphamide
+#methotrexate+5 fluorouracil+cyclophosphamide
+#taxol+adriamycin+cyclophosphamide+herceptin
+#cyclophosphamidum
+#Doxorubicinum
+#Adriamycin, cytoxan, avastin
+#Pemetrexed
+#Cytoxan and Taxotere
+#Paclitaxel (Protein-Bound)
+#lapatinib
+#avastin
+#clodronic acid
+#Fareston
+#Taxane
+#clodronate
+#trastuzumab
+#aromasin
+#femara
+#zoledronic acid
+#triptorelin
+#Everolimus
+#Clodronate
+#Bevacizumab or Placebo
+#Cyclophosphane
+#Mitomycin
+#Mitoxantrone
+#Leuprolide
+#Pamidronic acid
+#Leuprorelin
+#Taxotere/Cytoxan
+#Nolvadex
+#aromatase exemestane
+#TCH
+#Cytoxen
+#fluorouracil
+#Megace
+#Yondelis
+#Ixabepilone
+#letrozole
+#tamoxifen citrate
+#taxotere
+#faslodex
+#doxorubicin HCL
+#abraxane
+#Neulasta
+#ANASTROZOLE
+#NEULASTA
+Cisplatinum
+#Bleomycin
+#Mitomycin C
+#Hydrocortisone
+#5-flurouracil
+#Amifostine
+CarboPlatinum
+#Irinotecan
+#Cetuximab
+#Fluorouracil (5-FU)
+#Topotecan HCl
+#Topotecan
+Cisplatin-xrt
+#Fluoruracil
+#Study drug AMG 655
+#5 FU
+#Leucovorin
+#Erbitux
+#Levcovorin
+#5- FU
+#Cetuximab Study drug
+#Folinic acid
+#Capecitabine
+#5-Fluoruoracil
+#Panitumumab
+#Folfox
+#Camptosar
+#CPT-11
+#FOLFOX
+#Folfiri
+oxaliplatin
+#Folinic Acid
+#FolFox
+#IRINOtecan HCl
+#BEVACIZumab
+#Floxuridine
+#Leucovorin Calcium
+#CETUXimab
+#Pegfilgrastim (Peg G-CSF)
+#Filgrastim (G-CSF)
+#Pegfilgrastim
+#Dexamethasone
+#Irinotecan HCl
+#Irinotecan HCL
+Calcium Foliatum, fluorouracilum, oxaliplatinum, dexamethassone
+oxaliplatinum+ 5-FU
+#5-Fluorouracil + leucovorin
+oxaliplatinum+5 fluorouracilum
+#Raltitrexed
+#leucovorin calcium
+#bevacizumab
+#capecitabine
+#regorafenib
+#leucovorin
+#irinotecan
+OXALIPLATIN
+#C1 FOLFIRI/Zaltrap
+#Irinotecan + Cetuximab
+#FOLFIRI/Avastin
+Carboplatinum
+CISPLATIN
+#VECTIBIX
+#ERBITUX
+#erbitux
+#everolimus
+#panitumumab
+#vectibix
+#xeloda
+#Vorinostat
+#HSC vaccine injection
+#Alimta
+#IMC-A12
+#IRESSA
+#Palixtaxel
+#Cetuxinab
+#AT-101
+#5-fluorouracil
+#alimta
+#rigosertib
+#Eribulin
+#cetuximab
+#px-866
+#Naxavar
+#SOM 230
+#Sarafenib
+#Regorafenib
+#Sorafenib
+#Nexavar
+#ABT-888 and temozolomide
+#Temozolomide
+Everolimus, Gemcitabine, and Cisplatin
+#Adriamycin/Cytoxan
+#ABT-888
+#LY228820
+#Alvesin
+#Sunitinib
+#HEC.1 - Sorafenib vs Sorafenib plus Doxorubicin
+#Sorafinib ( Nexavar)
+#temsirolimus
+#sorafenib
+#SORAFENIB
+#Velcade
+Taxol/Carboplatin
+Topotecan/Carboplatin
+Cisplatin/Gemzar
+#Gemcitibine
+#Fuluestrant
+#RBBX 01
+#Hexalen
+#5F4 Leucovorin
+#BA4 43 9006
+#Patupilone
+#Irolfluvin
+Carbplatin
+#Paciltaxel
+#Gemicitabine
+#topotecan
+#Carbo
+#doxil
+#Hexamethylmelamine
+#Toptecan
+#Armidex
+#Oca Rex Oregovomab
+#Taxol or Taxotere
+#Gemcitibane
+#Ovarex Study
+#Interleukin-12
+#Irressa
+#Liposomal Doxorubicin
+#Abagovomab or Placebo
+#90Y-HU3S193
+Carbobplatin
+#Paciltaxal
+#Bevacizumab or placebo
+#Paclitaxil
+#Liposomal Doxorubican
+#Ovarex/Placebo
+#Xyotax
+#Ovarex/IND
+#Investigal drug Avastin
+#AMG 706
+#Etoposide (VP16)
+#Rhumab/Ind
+#Avastin/bevacizumab/placebo
+#Bevacizamab/Placebo
+#Pacitaxel
+#Taxoterecin
+#Gomzar
+#Amitostine
+#Gemzet
+#Gemar
+#Topetecan
+#GOG 218
+#Gemzan
+#VP16
+#Amitostin
+#Gezmar
+#Topecan
+#Bevacizumiab/ versus Placebo
+#Pacliatxel
+#Ciplastin
+#GOG182
+#Gaminocamptothecin
+#SCH 58500
+#Aminopterin
+#Hexamethymelamine
+#Ovarex/placebo
+Carboplatin 6th
+#Ifostamide
+#PSC833
+#Chlorambucil
+Carboplatin #1
+Cisplatin #2-7
+#Vamydex
+#Melphalan
+#VP 16
+#A202171 Protocol
+#Oral Etoposide
+#Megace (oral)
+#Doxorubicin HCL Liposomal
+#Doxorubicin HCL
+#Topotecan HCL
+#Gemcitabine HCL
+#Avastin (Bevacizumab)
+#Doxorubicin HCL Liposomal -Doxil
+#Amgen 706
+#Doxorubincin HCL
+#CEP 11981
+#Doxorubicin HCI Liiposomal
+#Abagovomab vs Placebo
+#Pacilatxel
+#Abagovomag vs Placebo
+#Bevacizumab vs Placebo
+#Gemcitabine HCI
+#Paclitaxel; Albumin-Bount
+#Hexalin
+#Trabectedin
+#CPT 11
+#Sargramostin
+#SNS 595
+#CBP501
+#Catumaxumab
+#Altima
+#Cytoxin
+#AZD 2281
+#Liosomal Docorubicin
+#Paciltaxle
+#Cediranib Placebo
+#Pacliltaxel
+Paraplatin
+#Clinical Trial
+#Megestrol Acetate
+#carbopaltin
+#Decodron
+#Gamzar
+#CCDP
+#Ovarex MA6 B43.13
+#Melphalon
+#Interferon gamma
+#IL 12
+#IL 2
+#Provera
+#Doxorubicin HCI Lipsome
+#Eloxatin
+#folinic acid
+#5-fu
+#Gemcitabine Injection
+#Irinotecan Hydrochloride
+#GEMCITABINE
+#ABRAXANE
+#gemzar
+#gemcitabine HCL
+#Leucovorin calcium
+#FU7
+#5-Fluorouracil?
+#Aflibercept/ Placebo Study
+#FUDR (Floxuridine)
+#Fluorouracil IV Continuous infusion over 46 hours
+#Leuocvorin
+#BEVACIZUmab
+oxaliplatinum + 5-FU
+#dacarbazine
+#DTIC, Dacarbazine
+#Pazopanib
+#IFOSFAMIDE
+#trabectedin
+#pazopanib
+#temozolomide
+CISPLATINUM
+#PD 0332991
+#Dacarbazine
+#ET-743
+#MORAb-004
+#MLN8237
+#R1507
+#Liposomal doxorubicin
+#Dacarbazine (DTIC)
+#AP-23573 (ARIAD)
+#EZN-2968
+#Enoticumab
+#Threshold-302
+#ifosfamide
+#Sulindac
+#Gleevec
+#raloxifene
+#Tivozanib
+#Doxirubicin
+#Paclitaxol
+#IXABEPILONE
+#MEGACE
+Carboplatin & Paclitaxel
+#neulasta
+#VEGF-TRAP
+#Brivanib
+#Tamoxifen & Megace
+Carboplatin, Taxol
+Carboplatin/Paclitaxel/Bevacizumab
+Doxil & Carboplatin
+Carboplatin and Paclitaxel
+#Doxorubicin HCl Liposomal
+#fulvestrant
+#Clinical Trial-Study Agent
+#AZD6244
+#PORTEC3-radiation alone
+#letrozole femara
+Carboplatin/Paclitaxel
 #
-# drugs to select patient treatments
-#
-

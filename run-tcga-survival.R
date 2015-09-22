@@ -21,23 +21,18 @@ data_to_process <- read.table(
 
 # find all drug names used and report
 observed_drugs <- get_observed_drugs(
-	data_to_process # drugs_file_name
+	data_to_process
 	)
 
 
 write.table(
 	observed_drugs,
 	"observed_drugs.txt",
-	col.names=TRUE,
+	col.names=FALSE,
 	row.names=FALSE,
+	quote=FALSE,
 	sep="\t"
 	)
-
-# at this point we need to hand-check
-# the returned list of drugs observed.
-# There are typos and variations on drug
-# names to deal with.
-
 
 # we need to somehow flag samples treated
 # with one or more treatments of interest
@@ -48,10 +43,42 @@ write.table(
 # all treatments. Then dynamically group
 # cell lines with certain column names
 
-# to do
 samples_and_drugs <- get_samples_and_drugs(
-	data_to_process
+	data_to_process,
+	drugs=observed_drugs
 	)
+
+write.table(
+	samples_and_drugs,
+	file="samples_and_drugs.txt",
+	col.names=TRUE,
+	row.names=TRUE,
+	sep="\t",
+	quote=FALSE
+	)
+
+
+# at this point we need to hand-check
+# the returned list of drugs observed.
+# There are typos and variations on drug
+# names to deal with.
+
+drugs <- read.table(
+	file="./drugs.txt",
+	header=FALSE,
+	sep="\t",
+	stringsAsFactors=FALSE
+	)
+
+platinum_treated <- rep(0, times=nrow(samples_and_drugs))
+names(platinum_treated) <- rownames(samples_and_drugs)
+for(sample in names(platinum_treated)){
+	platinum_treated[sample] <- max(
+		samples_and_drugs[sample,which(as.matrix(drugs) %in% colnames(samples_and_drugs))],
+		na.rm=TRUE
+		)
+}
+
 
 # get survival estimates for each sample
 # and study
